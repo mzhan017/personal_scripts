@@ -1,4 +1,11 @@
 "This is personal vim configuration for cscope
+" exmaple of cscope commands
+"  1. cs add *.out, to add database files;
+"  2. cs show , to show the connections
+"  3. cs kill, to kill a connection
+"  4. cs reset to reinit all connections
+"  5. cs help, get help page
+
 " Could add following contents in ~/.vimrc file
 
 " To check if the cscope is in build
@@ -17,8 +24,10 @@ let mapleader = " "
 " timeout for 1000 ms
 set timeoutlen=1000
 
-nnoremap <leader>s :cs find s <C-R>=expand("<cword>")<CR><CR>
-nnoremap <leader>g :cs find g <C-R>=expand("<cword>")<CR><CR>
+nnoremap <leader>s :cs find s <C-R>=expand("<cword>")<CR><CR> " 
+
+" first click space, and then click g, not at the same time
+nnoremap <leader>g :cs find g <C-R>=expand("<cword>")<CR><CR> 
 nnoremap <leader>c :cs find c <C-R>=expand("<cword>")<CR><CR> " calling function
 nnoremap <leader>d :cs find d <C-R>=expand("<cword>")<CR><CR> " called function
 nnoremap <leader>t :cs find t <C-R>=expand("<cword>")<CR><CR>
