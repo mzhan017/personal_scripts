@@ -1,4 +1,5 @@
 "This is personal vim configuration for cscope
+" Could add following contents in ~/.vimrc file
 
 " To check if the cscope is in build
 "   mark@wxy:/curl$ vim --version | grep cscope
@@ -10,6 +11,7 @@ if filereadable("cscope.out")
 endif
 
 set nocompatible        " for WSL
+" As the space's function is duplicate with ghj, then make it as leader
 nnoremap <SPACE> <Nop>  " make space to nop
 let mapleader = " "
 " timeout for 1000 ms
@@ -25,3 +27,5 @@ nnoremap <leader>i :cs find i <C-R>=expand("<cfile>")<CR><CR>
 
 " ctrl+t: go back
 " ctrl+]: go to the definition
+
+" cscope has no native command to dump call stack

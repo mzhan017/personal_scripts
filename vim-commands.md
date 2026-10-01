@@ -1,3 +1,7 @@
+# 术语解释
+## vimrc
+rc的意思是run command，就是在vim启动的时候自动加载执行的command
+
 # 常用变量
 ## mapleader
 let mapleader = " "
