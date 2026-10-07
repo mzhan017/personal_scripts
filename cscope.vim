@@ -38,3 +38,11 @@ nnoremap <leader>i :cs find i <C-R>=expand("<cfile>")<CR><CR>
 " ctrl+]: go to the definition
 
 " cscope has no native command to dump call stack
+" find . -type f \( -name "*.c" -o -name "*.h" \) \
+" ! -path "./build/*" \
+" ! -path "./.git/*" \
+" ! -path "./out/*" \
+" ! -path "./tmp/*" > cscope.files
+" cscope -bqk -i cscope.files
+" cscope will load all files in memory to generate the cscope.out
+" So need patient to wait ....
