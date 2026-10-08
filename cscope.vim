@@ -13,9 +13,9 @@
 "   +cscope            +localmap          -ruby              +wildignore
 
 " if cscope.out in current directory
-if filereadable("cscope.out")
-    cs add cscope.out
-endif
+" if filereadable("cscope.out")
+"    cs add cscope.out
+" endif
 
 set nocompatible        " for WSL
 " As the space's function is duplicate with ghj, then make it as leader
@@ -27,10 +27,10 @@ set timeoutlen=1000
 nnoremap <leader>s :cs find s <C-R>=expand("<cword>")<CR><CR> " 
 
 " first click space, and then click g, not at the same time
-nnoremap <leader>g :cs find g <C-R>=expand("<cword>")<CR><CR> 
+nnoremap <leader>g :cs find g <C-R>=expand("<cword>")<CR><CR> " symbol
 nnoremap <leader>c :cs find c <C-R>=expand("<cword>")<CR><CR> " calling function
 nnoremap <leader>d :cs find d <C-R>=expand("<cword>")<CR><CR> " called function
-nnoremap <leader>t :cs find t <C-R>=expand("<cword>")<CR><CR>
+nnoremap <leader>t :cs find t <C-R>=expand("<cword>")<CR><CR> " string search
 nnoremap <leader>f :cs find f <C-R>=expand("<cfile>")<CR><CR>
 nnoremap <leader>i :cs find i <C-R>=expand("<cfile>")<CR><CR>
 
