@@ -27,7 +27,7 @@ set timeoutlen=1000
 nnoremap <leader>s :cs find s <C-R>=expand("<cword>")<CR><CR> " 
 
 " first click space, and then click g, not at the same time
-nnoremap <leader>g :cs find g <C-R>=expand("<cword>")<CR><CR> " symbol
+nnoremap <leader>g :cs find g <C-R>=expand("<cword>")<CR><CR> " find symbol
 nnoremap <leader>c :cs find c <C-R>=expand("<cword>")<CR><CR> " calling function
 nnoremap <leader>d :cs find d <C-R>=expand("<cword>")<CR><CR> " called function
 nnoremap <leader>t :cs find t <C-R>=expand("<cword>")<CR><CR> " string search
@@ -46,3 +46,6 @@ nnoremap <leader>i :cs find i <C-R>=expand("<cfile>")<CR><CR>
 " cscope -bqk -i cscope.files
 " cscope will load all files in memory to generate the cscope.out
 " So need patient to wait ....
+
+" Issue list
+" https://sourceforge.net/p/cscope/bugs/307/ find text has one issue for linux kernel code with tab
