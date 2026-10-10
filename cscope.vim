@@ -49,3 +49,6 @@ nnoremap <leader>i :cs find i <C-R>=expand("<cfile>")<CR><CR>
 
 " Issue list
 " https://sourceforge.net/p/cscope/bugs/307/ find text has one issue for linux kernel code with tab
+
+" set the cursor with more remarkable
+set termguicolors
