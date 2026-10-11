@@ -65,26 +65,6 @@ V2 with price update.
 // @grant        none
 // ==/UserScript==
 
-const rawText = `A001|128
-                     A002|256
-                     B003|89
-                     C004|399`;
-
-function getPriceById(targetId) {
-    // 按行分割
-    const lines = rawText.split("\n");
-    for (const line of lines) {
-        const trimLine = line.trim();
-        if (!trimLine) continue;
-        // 按竖线分割成两列
-        const [id, price] = trimLine.split(" ");
-        if (id === targetId) {
-            return Number(price);
-        }
-    }
-    return null;
-}
-
 (function() {
     'use strict';
     // 预设信息
@@ -93,7 +73,25 @@ function getPriceById(targetId) {
         phone: "13800138000",
         email: "test@example.com"
     };
+    const rawText = `A001|128
+                     A002|256
+                     B003|89
+                     C004|399`;
 
+    function getPriceById(targetId) {
+       // 按行分割
+       const lines = rawText.split("\n");
+       for (const line of lines) {
+           const trimLine = line.trim();
+           if (!trimLine) continue;
+           // 按竖线分割成两列
+           const [id, price] = trimLine.split(" ");
+           if (id === targetId) {
+               return Number(price);
+           }
+       }
+       return null;
+    }
 	const table = document.querySelector("table.table-striped");
 
 	if(table){
@@ -124,11 +122,8 @@ function getPriceById(targetId) {
 		  const val = targetTd5.innerText.trim();
           const inputs = document.querySelectorAll('input[name="price"]');
 
-		  var price =0;
-		  if (val.startsWith("SF")) {
-			val1 = "利盈顺丰快递";
-		  }
-          inputs.forEach(inp => { inp.value = val1; });
+		  var price = getPriceById(val);
+          inputs.forEach(inp => { inp.value = price; });
 		}else{
 		  alert("找不到第7个td");
 		}
