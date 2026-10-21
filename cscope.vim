@@ -54,3 +54,10 @@ nnoremap <leader>i :cs find i <C-R>=expand("<cfile>")<CR><CR>
 let &t_SI = "\e[5 q"   " Insert mode: 竖线
 let &t_EI = "\e[1 q"   " Normal mode: 实心块
 set termguicolors
+
+" cscope vs vim, has one issue
+" background https://sourceforge.net/p/cscope/bugs/307
+
+" build cscope in wsl
+" sudo sudo apt install libncurses-dev 
+" ./configure CURSES_LIBS="-lncursesw -ltinfo"
